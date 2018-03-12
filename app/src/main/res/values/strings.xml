@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Менеджер расходов</string>
+    <string name="enter_name">Введите событие: </string>
+    <string name="enter_product"> Введите товар: </string>
+    <string name="enter_price">0 руб.</string>
+    <string name="add">+</string>
+    <string name="next">&gt;</string>
+    <string name="back">&lt;</string>
+
+    }
+</resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/priceSec"
+        tools:text="0 руб."
+        android:padding="@dimen/padding"
+        android:textStyle="bold"
+        android:background="@color/red"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/productSec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/priceSec"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/priceSec"
+        android:layout_toStartOf="@+id/button2"
+        android:background="@color/orange"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/padding_small"
+        android:textColor="@android:color/white"
+        tools:text="event" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/productSec"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/priceSec"
+
+        android:background="@color/orange"
+        android:onClick="goToSecondActivity"
+        android:text="@string/next"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/mid_text" />
+
+
+</RelativeLayout>
