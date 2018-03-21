@@ -38,9 +38,8 @@ public class SecondActivity extends AppCompatActivity {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put("list",prd+","+prc);
-        Log.d("Tabler",prd+","+prc);
+        Log.d("Table",prd+","+prc);
         db.insert(tableName, null, cv);
-
     }
 
     private void readTable(){
@@ -51,9 +50,9 @@ public class SecondActivity extends AppCompatActivity {
             int ls_ind = c.getColumnIndex("list");
             do{
                 String ls = c.getString(ls_ind);
-                Log.d("TableReaded",ls);
-                String[] part = ls.split(",");
-               adapter.add(new Item(part[0],part[1]));
+                Log.d("Table",ls);
+                //String[] part = ls.split(",");
+               // adapter.add(new Item(part[0],part[1]));
             } while (c.moveToNext());
         }}
         catch (Exception e){
@@ -87,7 +86,8 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 adapter.add(new Item(productSec.getText().toString(), (priceSec.getText().toString())));
-                saveChanges(productSec.getText().toString(),priceSec.getText().toString().equals("")?"0 ":priceSec.getText().toString());
+                Log.d("Table",productSec.getText().toString()+" "+priceSec.getText().toString());
+                saveChanges(productSec.getText().toString(),priceSec.getText().toString());
             }
         });
     }
@@ -103,9 +103,9 @@ public class SecondActivity extends AppCompatActivity {
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
             @SuppressLint("ViewHolder") final View view = getLayoutInflater().inflate(R.layout.item, null);
             final Item item = getItem(position);
-            final TextView nameTbl = (TextView) view.findViewById(R.id.name);
+            final TextView nameTbl = (TextView) view.findViewById(R.id.productSec);
             nameTbl.setText(item.product);
-            final TextView priceTxt = (TextView) view.findViewById(R.id.price);
+            final TextView priceTxt = (TextView) view.findViewById(R.id.priceSec);
             priceTxt.setText(item.price + " руб.");
             Button nextBtn = (Button) view.findViewById(R.id.nextTable);
             nextBtn.setOnClickListener(new View.OnClickListener() {
@@ -124,11 +124,6 @@ public class SecondActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    @Override
-    public void onBackPressed(){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
     public void goToNextActivity(String nm, String pr) {
         Intent intent = new Intent(this, SecondActivity.class);
         intent.putExtra("TableName",nm);
