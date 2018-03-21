@@ -40,6 +40,7 @@ public class SecondActivity extends AppCompatActivity {
         cv.put("list",prd+","+prc);
         Log.d("Tabler",prd+","+prc);
         db.insert(tableName, null, cv);
+
     }
 
     private void readTable(){
