@@ -22,7 +22,7 @@
         android:layout_alignBottom="@+id/price"
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/price"
-        android:layout_toStartOf="@+id/button2"
+        android:layout_toStartOf="@+id/nextTable"
         android:background="@color/orange"
         android:gravity="center_vertical"
         android:paddingStart="@dimen/padding_small"
@@ -30,7 +30,7 @@
         tools:text="event" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/nextTable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/name"
